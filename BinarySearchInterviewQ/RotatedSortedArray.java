@@ -2,11 +2,11 @@ package BinarySearchInterviewQ;
 
 public class RotatedSortedArray {
     public static void main(String[] args) {
-        int []nums={4,5,6,7,0,1,2};
+        int []nums={3,3,3,3,3,3,3,3,1,3};
         int pivot=pivot(nums);
         System.out.println(pivot);
-        int index=searcher(nums,6,pivot);
-        System.out.println(index);
+//        int index=searcher(nums,6,pivot);
+//        System.out.println(index);
 
     }
     static int searcher(int []nums,int target,int pivot)
