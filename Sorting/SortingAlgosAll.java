@@ -10,7 +10,7 @@ public class SortingAlgosAll {
         Bubble(arr);
         System.out.println(Arrays.toString(arr));;
         System.out.println("insertion sort");
-        Insertion(arr);
+        insertion(arr);
         System.out.println(Arrays.toString(arr));
         System.out.println("selection sort");
         selection(arr);
@@ -31,7 +31,7 @@ public class SortingAlgosAll {
             }
         }
     }
-    static void Insertion(int [] arr)
+    static void selection(int [] arr)
     {
         for(int i=0;i< arr.length-1;i++)
         {
@@ -48,7 +48,7 @@ public class SortingAlgosAll {
             arr[min]=temp;
         }
     }
-    static void selection(int [] arr)
+    static void insertion(int [] arr)
     {
         for(int i=0;i< arr.length-1;i++)
         {
