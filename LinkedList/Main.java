@@ -34,20 +34,15 @@ public class Main {
 
 //
 
-        CircularLL list=new CircularLL();
-
-        list.insert(10);
-        list.insert(20);
-        list.insert(30);
-        list.insert(40);
-        list.insert(556);
-        list.insert(65);
-
+//
+        SinglyLinkedList list=new SinglyLinkedList();
+//        System.out.println(list.size);
+        list.addFirst(100);
+        list.addFirst(200);
+        list.addFirst(300);
         list.display();
-        System.out.println(list.size);
-
-        list.delete(30);
-
+        list.insertusingRecursion(40,1);
+        System.out.println(list.returnhead());
         list.display();
         System.out.println(list.size);
 

@@ -116,6 +116,28 @@ public class SinglyLinkedList {
         }
         return 1;
     }
+    public void insertusingRecursion(int val,int index)
+    {
+           head =  insertRec(val,index,head);
+    }
+    public int returnhead()
+    {
+        return head.value;
+    }
+    private Node insertRec(int val,int index,Node node)
+    {
+        if(index==0)
+        {
+            Node temp=new Node(val,node);
+            size++;
+            return temp;
+        }
+        if(node.next!=null) {
+            node.next=insertRec(val, index - 1, node.next);
+        }
+        return node;
+    }
+
 
      public Node get(int index) // function to get the node at a particular index
     {
