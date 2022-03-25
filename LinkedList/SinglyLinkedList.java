@@ -27,6 +27,54 @@ public class SinglyLinkedList {
         }
     }
 
+    public  void  Bubble()
+    {
+        bubblesort(size-1,0);
+    }
+
+    private void bubblesort(int r, int c) {
+        if(r==0)
+        {
+            return;
+        }
+            if(c<r)
+            {
+                Node f=get(c);
+                Node s=get(c+1);
+
+               if(f.value>s.value)
+               {
+                   if(f==head)
+                   {
+                       head=s;
+                       f.next=s.next;
+                       s.next=f;
+                   }
+                   else  if(s==tail)
+                   {
+                       Node p=get(c-1);
+                       p.next=s;
+                       tail=f;
+                       s.next=f;
+                       f.next=null;
+                   }
+                   else {
+                       Node p=get(c-1);
+                       p.next=s;
+                       f.next=s.next;
+                       s.next=f;
+                   }
+               }
+                bubblesort(r,c+1);
+            }
+            else {
+                bubblesort(r-1,0);
+            }
+
+
+
+    }
+
     public void addFirst(int val)       //function to add an element at the first position
     {
         Node temp=new Node(val);
@@ -116,6 +164,19 @@ public class SinglyLinkedList {
         }
         return 1;
     }
+
+    public void ReverseusingRecursion(Node node)
+    {
+        if(node==tail)
+        {
+            head=tail;
+            return;
+        }
+        ReverseusingRecursion(node.next);
+        tail.next=node;
+        tail=node;
+        tail.next=null;
+    }
     public void insertusingRecursion(int val,int index)
     {
            head =  insertRec(val,index,head);
@@ -157,5 +218,46 @@ public class SinglyLinkedList {
             temp=temp.next;
         }
         System.out.println("NULL");
+    }
+    public void reverseLLinPlace(Node head)
+    {
+        Node prev=null;
+        Node pres=head;
+        Node next=pres.next;
+
+        while (pres!=null)
+        {
+            pres.next=prev;
+            prev=pres;
+            pres=next;
+            if(next!=null)
+                next=next.next;
+        }
+        this.head=prev;
+    }
+
+    public Node getNode(int index,Node head)
+    {
+        Node temp=head;
+        for(int i=1;i<index;i++)
+        {
+            temp=temp.next;
+        }
+        return temp;
+    }
+
+
+    public static void main(String[] args) {
+        SinglyLinkedList ll=new SinglyLinkedList() ;
+        ll.addFirst(1);
+        ll.addFirst(2);
+        ll.addFirst(3);
+        ll.addFirst(4);
+        ll.addFirst(5);
+        ll.display();
+//        ll.ReverseusingRecursion(ll.head);
+//        ll.reverseLLinPlace(ll.head);
+        ll.display();
+
     }
 }

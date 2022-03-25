@@ -33,7 +33,7 @@ public class MergeSortedLL {
             list2=list2.next;
             tail=tail.next;
         }
-        return dummyhead;
+        return dummyhead.next;
     }
 //    public void addLast(int val)  //function to add an element at the last
 //    {
